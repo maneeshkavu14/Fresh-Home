@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>FRESH HOME</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+	<meta name="keywords"
+		content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="gettemplates.co" />
+
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/icomoon.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/flexslider.css')}}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/owl.theme.default.min.css')}}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+	<!-- Modernizr JS -->
+	<script src="{{url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{{url_for('static', filename='js/respond.min.js')}}"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+	<div class="fh5co-loader"></div>
+
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-xs-2">
+						<div id="fh5co-logo"><a customer_home>CUSTOMER HOME</a></div>
+					</div>
+					<div class="col-md-6 col-xs-6 text-center menu-1">
+						<ul>
+							<li class="has-dropdown">
+								<a>My Orders</a>
+								<ul class="dropdown">
+									<li><a href="customer_view_current_order">Current Order</a></li>
+									<li><a href="customer_view_order_item">Delivered</a></li>
+							
+
+								</ul>
+							</li>
+							<!-- <li><a href="customer_home">Home</a></li> -->
+							
+							<li class="has-dropdown">
+								<a>ADD</a>
+								<ul class="dropdown">
+									<li><a href="customer_add_complaints">Add complaints</a></li>
+									<li><a href="feedback">Add Feedback</a></li>
+
+								</ul>
+							</li>
+							<li class="has-dropdown">
+								<a>View</a>
+								<ul class="dropdown">
+									<li><a href="view_complaint_reply">Complaint reply</a></li>
+
+									<li><a href="customer_view_farmer_announcement">Farmer Announcement</a></li>
+									<li><a href="customer_view_announcement">Admin Announcement</a></li>
+								</ul>
+							</li>
+
+							<li><a href="/logout">LOGOUT</a></li>
+
+							{% if qnty %}
+							{% for qnty in qnty%}
+							<li><a href="cart" class="cart"> <span><small>{{qnty[0]}}</small><i
+											class="icon-shopping-cart"></i></span></a></li>
+						</ul>
+						{% endfor%}
+						{% else %}
+                        <li><a href="cart" class="cart">  <span><small>{{0}}</small><i class="icon-shopping-cart"></i></span></a></li>
+                    </ul>
+                    {% endif%}
+					</div>
+
+				</div>
+
+			</div>
+
+		</nav>
+
+
+		<aside id="fh5co-hero" class="js-fullheight">
+			<div class="flexslider js-fullheight">
+				<ul class="slides">
+					<li style="background-image: url(/static/images/index.jpg);">
+						<div class="overlay-gradient"></div>
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<div class="desc">
+
+										<h2>FRESH HOME</h2>
+										<p> Hey!! Are you looking for a Good, Healthier, Homemade Food items? You are
+											almost there ASAP!!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image: url(/static/images/index.jpg);">
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<div class="desc">
+
+										<h2>FRESH HOME</h2>
+										<p>We are here to help you to grab your Food items, don't look back !! Go
+											Forward and make a Buy ;-)
+										</p>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image: url(/static/images/index.jpg);">
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<div class="desc">
+
+										<h2>FRESH HOME</h2>
+										<p>A Life full of Tasty Food, we always deliver you the same. Taste that best,
+											it's on time!!
+										</p>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image: url(/static/images/index.jpg);">
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<div class="desc">
+
+										<h2>FRESH HOME</h2>
+										<p>Giving your Hunger a new Option,Love your Hunger. Good Food for Good
+											Moments.!
+										</p>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+	</div>
+	<div id="fh5co-product">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<span>Cool Stuff</span>
+					<h2>Products</h2>
+					<p>Grab your Products down here.</p>
+				</div>
+
+			</div>
+			<div class="row">
+				{%if row%}
+				{% for row in row%}
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(/static/fileupload/{{row[2]}});">
+
+							<span class="sale">Sale</span>
+							<div class="inner">
+								<p>
+									<a href="cart" class="icon"><i class="icon-shopping-cart"></i></a>
+
+
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3>{{row[1]}}</h3>
+
+							<p>
+								{{row[3]}}
+
+							</p>
+
+							<span class="price"> &#8377; {{row[4]}}</span><br>
+
+
+
+
+							
+							<label for="quantity"><b>Quantity</b></label><br>
+								<center>
+									<form action="/addtocart" method="POST">
+									<div class="input-group mb-4">
+										<input type="number" id="qnty" name="qnty" class="form-control input-number"
+											value="0" min="1" max="{{row.5}}" oninput="multiply()" >
+									</div>
+									<input type="text" name="pid" value="{{row.0}}" hidden>
+									<input type="text" name="price" id="price" value="{{row.4}}" hidden>
+									<input type="text" name="total" id="total" hidden>
+									<input type="text" name="max" id="max" value="{{row.5}}" hidden>
+									<button type="submit" class="btn btn-primary"> ADD TO CART</button><br>
+								</form>
+								</center>
+								
+							
+							<div class="row">
+								<div class="col-sm-12 text-center">
+
+
+									<!-- <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> BUY NOW -->
+
+								</div>
+							</div>
+
+						</div>
+
+
+					</div>
+				</div>
+				{%endfor%}
+				{% else %}
+        <div class="card" style="margin-left: 8%; width: 85%;  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+            <div class="card-body">
+        <div style=" margin-left: 10%; margin-top :2rem!important;">
+        <br> <h2 style=" color: crimson;">   EMPTY FOR NOW, PRODUCTS WILL BE ADDED SOON . </h2>
+		<h2 style=" margin-left:25%;">PLEASE BE PATIENT !!!</h2>
+        </div><br>
+            </div>
+        </div>
+        
+    {% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-services" class="fh5co-bg-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-4 text-center">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-shop"></i>
+						</span>
+						<h3>Eat Good</h3>
+						<p>You don't need a silver fork to eat a good food.! People who loves to eat are always the best
+							People :-)</p>
+
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 text-center">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-wallet"></i>
+						</span>
+						<h3>Save Money</h3>
+						<p>Food make me Happy, make me Better ,make me Money, we offer you Good and Healthier Homemade
+							Food items!!. </p>
+
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 text-center">
+					<div class="feature-center animate-box" data-animate-effect="fadeIn">
+						<span class="icon">
+							<i class="icon-paper-plane"></i>
+						</span>
+						<h3>Fast Delivery</h3>
+						<p>We always Deliver more than you Expected, We promising you on the Quality</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<!-- Carousel -->
+	<script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+	<!-- countTo -->
+	<script src="{{url_for('static', filename='js/jquery.countTo.js')}}"></script>
+	<!-- Flexslider -->
+	<script src="{{url_for('static', filename='js/jquery.flexslider-min.js')}}"></script>
+	<!-- Main -->
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+	<script>
+		function multiply() {
+			price = document.getElementById("price").value;
+			qnty = document.getElementById("qnty").value;
+			console.log("pr", price, "qr", qnty)
+			result = price * qnty;
+			document.getElementById("total").value = result;
+			// max value checking
+			// max = document.getElementById("max").value;
+			// if(qnty > max)
+			// alert("the item is out of stock");
+		}
+	</script>
+
+
+
+
+</body>
+
+</html>

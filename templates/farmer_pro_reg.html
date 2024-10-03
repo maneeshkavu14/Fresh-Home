@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> FRESH HOME </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	
+	<!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/icomoon.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/flexslider.css')}}">
+
+	
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/owl.theme.default.min.css')}}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+	<!-- Modernizr JS -->
+	<script src="{{url_for('static',filename='js/modernizr-2.6.2.min.js')}}"></script>
+
+	</head>
+	<body>
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="container">
+				
+				<div class="row">
+					
+					<div class="col-md-3 col-xs-2">
+						<div id="fh5co-logo"><a farmer_home>FARMER HOME</a></div>
+					</div>
+					<div class="col-md-6 col-xs-6 text-center menu-1">
+					<ul>
+						<li><a href="farmer_home"> < Back</a></li>
+						<!-- <li><a href="farmer_pro_reg">Add Product</a></li> -->
+						<li class="has-dropdown">
+							<a>Products</a>
+							<ul class="dropdown">
+							<!-- <li><a href="farmer_pro_reg">Add Products</a></li> -->
+							<li><a href="farmer_view_product">my products</a></li>
+							</ul>
+						</li>
+						<li class="has-dropdown">
+							<a>Orders</a>
+							<ul class="dropdown">
+							
+								<li><a href="farmer_view_customer_order"> Customer orders</a></li>
+								
+								<li><a href="farmer_view_packed_items">Packed Orders</a></li>
+								<!-- <li><a href="#">API</a></li> -->
+							</ul>
+						</li>
+						
+						<li class="has-dropdown">
+							<a>View</a>
+							<ul class="dropdown">
+								<li><a href="farmer_view_announcement">Announcement</a></li>
+								
+								<li><a href="view_application">Application</a></li>
+								<!-- <li><a href="#">API</a></li> -->
+							</ul>
+						</li>
+						<li class="has-dropdown">
+							<a>Add</a>
+							<ul class="dropdown">
+								<li><a href="farmer_add_announcement">Announcement</a></li> 
+							</ul>
+						</li>
+					
+						<li><a href="/logout">LOGOUT</a></li>
+					</ul>
+				</div>
+				
+			</div>
+			
+		</div>
+	</nav>
+	
+	<div id="fh5co-contact">
+		<div class="container">
+			<div style=" margin-top:2%!important;"> {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+						<div  class="alert alert-info alert-dismissible" role="alert">
+							<strong>Message : </strong> {{ message }}
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<br>
+						{% endfor %} {% endif %} {% endwith %}
+			<div class="row">
+
+				<div class="col-md-8 animate-box" style="margin-left: 18%;">
+					<h3>PRODUCT REGISTRATION</h3>
+					<form action="farmer_pro_reg" method="POST" enctype="multipart/form-data">
+						<div class="row form-group">
+							<div class="col-md-12">
+                                
+                                <!-- <div class="form-floating mb-3"> -->
+                                <select class="form-control" name="pcid" placeholder="choose category" aria-label="Default select example"required>
+                                            <option  value="">choose category :</option>
+                                            {% for row in row%}
+											<option value="{{row[0]}}">{{row[1]}}</option>
+											{% endfor %}
+									</select>
+							</div>
+						</div>
+								
+						<div class="row form-group">
+							<div class="col-md-6">
+								<!-- <label for="fname">First Name</label> -->
+								<input type="text" pattern="[A-Z a-z]+" id="pname" name="pname" class="form-control" placeholder="Product Name" required>
+							</div>
+							<div class="col-md-6">
+								<!-- <label for="lname">Last Name</label> -->
+								<input type="file" accept=".jpg,.jpeg"   id="image" name="image" required><span id="#file_error"></span>
+								<p  style="color: brown;"> * Only jpg & jpeg files are allowed</p>
+								
+								
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<!-- <label for="message">Message</label> -->
+								<textarea type="text" name="desc" id="desc" cols="20" rows="5" class="form-control" minlength="9" maxlength="100" placeholder="Product Description" title="description can only be under 100 characters" required></textarea>
+								<p style="color: brown;"> *Description must be in between 9 -100 characters long</p>
+							</div>
+						</div>
+                        
+
+						<div class="row form-group">							
+							<div class="col-md-6">
+								<input type="number" minlength="2" maxlength="4" id="price" name="price" title="price required" class="form-control" placeholder="Price" required>
+							</div>
+						
+													
+							<div class="col-md-6">
+								<input type="number" title="Enter the stock you have" id="stock" name="stock" class="form-control" placeholder="stock" required>
+							</div>
+						</div>
+
+					
+					
+						<div class="form-group">
+							<input style="float:right" type="submit"  value="SUBMIT" class="btn btn-primary">
+						</div>
+
+					</form>		
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{url_for('static',filename='js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{url_for('static',filename='js/jquery.waypoints.min.js')}}"></script>
+	<!-- Carousel -->
+	<script src="{{url_for('static',filename='js/owl.carousel.min.js')}}"></script>
+	<!-- countTo -->
+	<script src="{{url_for('static',filename='js/jquery.countTo.js')}}"></script>
+	<!-- Flexslider -->
+	<script src="{{url_for('static',filename='js/jquery.flexslider-min.js')}}"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="{{url_for('static',filename='js/google_map.js')}}"></script>
+
+	<!-- Main -->
+	<script src="{{url_for('static',filename='js/main.js')}}"></script>
+
+	</body>
+</html>
+
